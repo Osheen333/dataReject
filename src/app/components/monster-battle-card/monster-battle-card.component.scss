@@ -5,6 +5,8 @@
     margin: 0;
     display: block;
     overflow: hidden;
+    height: 178px;
+    border-radius: 7px;
 }
 .mat-card-image:first-child {
     margin-top: 0;
@@ -15,6 +17,21 @@
     flex-direction: column;
     border-radius: 7px;
     box-shadow: $box-shadow;
+    width: 307px;
+    p{
+        width:100%;
+        margin: 14px 0 5px 0;
+        padding: 0px;
+    }
+
+    .sub-titile{
+        font-size: 22px;
+        line-height: 26px;
+    }
+
+    .text-center {
+        text-align:center;
+    }
 }
 .centralized {
     display: flex !important;

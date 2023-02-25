@@ -11,11 +11,11 @@ export class MonsterListComponent {
   @Input() public monsters: Monster[] = [];
   public selectedMonsterId: string | null = null;
 
-  monsterSelected(monster: Monster | null) {
+  monsterSelected(monster: Monster | null, index: number) {
     if (monster!.id == this.selectedMonsterId) {
       monster = null;
     }
     this.selectedMonsterId = monster?.id || null;
-    this.selected.emit(monster);
+    this.selected.emit({monster:monster,index:index});
   }
 }

@@ -1,13 +1,14 @@
 <div class="main-section">
     <span class="main-title">Battle of Monsters</span>
     <app-monster-list [monsters]="monsters" (selected)="monsterSelected($event)"></app-monster-list>
+    <app-winner-display *ngIf="message" [message]="message"></app-winner-display>
     <div class="battle-section">
         <app-monster-battle-card [monster]="player" [title]="player?player.name:'Player'"></app-monster-battle-card>
         <button mat-button class="start-battle-button" [disabled]="!player" [class.active]="player"
-            [class.inactive]="!player">
+            [class.inactive]="!player" (click)="battleRequest()">
             Start Battle
         </button>
-        <app-monster-battle-card [monster]="computer" title="Computer">
+        <app-monster-battle-card [monster]="computer" [title]="computer?computer.name:'Player'">
         </app-monster-battle-card>
     </div>
 </div>

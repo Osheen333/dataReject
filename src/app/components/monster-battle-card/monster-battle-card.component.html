@@ -1,5 +1,17 @@
 <div>
     <mat-card class="battle-card-player centralized">
-        <p class="title">{{ title }}</p>
+        <img *ngIf="monster"  mat-card-image [src]="monster.imageUrl" class="image" />
+        <p class="title" [ngClass]="{'subtitle':monster, 'text-center' : !monster }">{{ title }}</p>
+        <ng-container *ngIf="monster">
+            <p>HP</p>
+            <mat-progress-bar mode="determinate" [value]="monster.hp"></mat-progress-bar>
+            <p>Attack</p>
+            <mat-progress-bar mode="determinate" [value]="monster.attack"></mat-progress-bar>
+            <p>Defense</p>
+            <mat-progress-bar mode="determinate" [value]="monster.defense"></mat-progress-bar>
+            <p>Speed</p>
+            <mat-progress-bar mode="determinate" [value]="monster.speed"></mat-progress-bar>
+        </ng-container>
+        
     </mat-card>
 </div>

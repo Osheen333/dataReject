@@ -2,7 +2,7 @@ import { TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { MonstersService } from './monsters.service';
 import { HttpClient } from '@angular/common/http';
-import { Monster } from '../interfaces/monster.interface';
+import { Monster, PostRequest,PostResponse } from '../interfaces/monster.interface';
 import { of } from 'rxjs';
 import { mockMonsters } from '../__mocks__/monsters';
 
@@ -95,6 +95,34 @@ describe('MonstersService', () => {
             'https://fsl-assessment-public-files.s3.amazonaws.com/assessment-cc-01/angry-snake.png',
         },
       ]);
+      done();
+    });
+  });
+
+  it('should get the list of monsters with data', (done) => {
+    let req: PostRequest = {
+      monster1Id: "monster-1",
+	    monster2Id: "monster-2"
+    }
+
+    let response:PostResponse = {
+      tie:false,
+      winner : {
+        id: 'monster-1',
+        name: 'Dead Unicorn',
+        attack: 60,
+        defense: 40,
+        hp: 10,
+        speed: 80,
+        type: 'Type',
+        imageUrl:
+          'https://fsl-assessment-public-files.s3.amazonaws.com/assessment-cc-01/dead-unicorn.png',
+      },
+    }
+    jest.spyOn(http, 'post').mockReturnValue(of(response));
+
+    service.postWinner(req).subscribe((response) => {
+      expect(response).toEqual(response);
       done();
     });
   });

@@ -15,3 +15,22 @@ export interface MonsterState {
   selectedMonster: Monster | undefined;
   isResetGame: boolean;
 }
+
+export interface MonsterIndex {
+  monster:Monster |null,
+  index:number
+}
+
+export interface PostRequest {
+  monster1Id  : string|undefined,
+  monster2Id: string|undefined
+}
+
+export interface PostResponse {
+  winner : Monster|null,
+  tie :boolean
+  
+}
+
+
+

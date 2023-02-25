@@ -5,7 +5,7 @@
         }}
     </span>
     <div class="list-monsters">
-        <app-monster-card *ngFor="let monster of monsters" [monster]="monster"
-            [isSelected]="monster.id === selectedMonsterId" (selected)="monsterSelected($event)"></app-monster-card>
+        <app-monster-card *ngFor="let monster of monsters; index as i" [monster]="monster"
+            [isSelected]="monster.id === selectedMonsterId" (selected)="monsterSelected($event,i)"></app-monster-card>
     </div>
 </div>

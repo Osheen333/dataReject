@@ -50,7 +50,7 @@ describe('MonsterListComponent', () => {
   it('should select a monster', fakeAsync(() => {
     const spy = jest.spyOn(component.selected, 'emit');
     component.monsters = mockMonsters.monsters;
-    component.monsterSelected(mockMonsters.selectedMonster);
+    component.monsterSelected(mockMonsters.selectedMonster,mockMonsters.index);
     tick();
     void expect(spy).toHaveBeenCalled();
   }));
@@ -59,7 +59,7 @@ describe('MonsterListComponent', () => {
     const spy = jest.spyOn(component.selected, 'emit');
     component.monsters = mockMonsters.monsters;
     component.selectedMonsterId = 'monster-1';
-    component.monsterSelected(mockMonsters.selectedMonster);
+    component.monsterSelected(mockMonsters.selectedMonster,mockMonsters.index);
     tick();
     void expect(spy).toHaveBeenCalled();
   }));

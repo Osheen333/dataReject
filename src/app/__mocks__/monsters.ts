@@ -56,6 +56,21 @@ export const mockMonsters = {
         'https://fsl-assessment-public-files.s3.amazonaws.com/assessment-cc-01/angry-snake.png',
     },
   ],
+  index:1,
+  monsterIndex : {
+    monster: {
+      id: 'monster-1',
+      name: 'Dead Unicorn',
+      attack: 60,
+      defense: 40,
+      hp: 10,
+      speed: 80,
+      type: 'Type',
+      imageUrl:
+        'https://fsl-assessment-public-files.s3.amazonaws.com/assessment-cc-01/dead-unicorn.png',
+    },
+    index:1
+  },
   selectedMonsterId: 'monster-1',
   selectedMonster: {
     id: 'monster-1',
